@@ -25,80 +25,66 @@ Icm3 = Exp1_Vb45_I1 + Exp1_Vb45_I2;
 I1_3 = Exp1_Vb45_I1;
 I2_3 = Exp1_Vb45_I2;
 
-big = subplot(2,4,[2,3,6,7]);
 
-plot(Vdm1(1:interval:end),I1_1(1:interval:end),'*--'); hold on;
-plot(Vdm1(1:interval:end),I2_1(1:interval:end),'s--');
-plot(Vdm1(1:interval:end),Idm1(1:interval:end),'^--');
-plot(Vdm1(1:interval:end),Icm1(1:interval:end),'o--');
 
-plot(Vdm2(1:interval+1:end),I1_2(1:interval+1:end),'r*--'); 
-plot(Vdm2(1:interval+1:end),I2_2(1:interval+1:end),'rs--');
-plot(Vdm2(1:interval+1:end),Idm2(1:interval+1:end),'r^--');
-plot(Vdm2(1:interval+1:end),Icm2(1:interval+1:end),'ro--');
+one = subplot(2,2,1);
 
-plot(Vdm3(1:interval-1:end),I1_3(1:interval-1:end),'g*--'); 
-plot(Vdm3(1:interval-1:end),I2_3(1:interval-1:end),'gs--');
-plot(Vdm3(1:interval-1:end),Idm3(1:interval-1:end),'g^--');
-plot(Vdm3(1:interval-1:end),Icm3(1:interval-1:end),'go--');
+plot(Vdm1(1:interval:end),I1_1(1:interval:end),'*--','LineWidth',2,'MarkerSize',10); hold on;
+plot(Vdm2(1:interval+1:end),I1_2(1:interval+1:end),'r*--','LineWidth',2,'MarkerSize',10); 
+plot(Vdm3(1:interval-1:end),I1_3(1:interval-1:end),'g*--','LineWidth',2,'MarkerSize',10); 
 
 xlim([-0.3 0.3]);
-ylim([-2e-7 2e-7]);
+ylim([0 2e-7]);
 grid on;
 
 legend('I_1 for V_2 = 1 V',...
-'I_2 for V_2 = 1 V',...
-'I_1 - I_2 for V_2 = 1 V',...
-'I_1 + I_2 for V_2 = 1 V',...
 'I_1 for V_2 = 2.5 V',...
+'I_1 for V_2 = 4.5 V','Location','NorthWest');
+
+
+four = subplot(2,2,2);
+
+plot(Vdm1(1:interval:end),I2_1(1:interval:end),'s--','LineWidth',2,'MarkerSize',10); hold on;
+plot(Vdm3(1:interval-1:end),I2_3(1:interval-1:end),'gs--','LineWidth',2,'MarkerSize',10);
+plot(Vdm2(1:interval+1:end),I2_2(1:interval+1:end),'rs--','LineWidth',2,'MarkerSize',10);
+
+xlim([-0.3 0.3]);
+ylim([0 2e-7]);
+grid on;
+
+legend('I_2 for V_2 = 1 V',...
 'I_2 for V_2 = 2.5 V',...
-'I_1 - I_2 for V_2 = 2.5 V',...
-'I_1 + I_2 for V_2 = 2.5 V',...
-'I_1 for V_2 = 4.5 V',...
-'I_2 for V_2 = 4.5 V',...
-'I_1 - I_2 for V_2 = 4.5 V',...
-'I_1 + I_2 for V_2 = 4.5 V','Location','SouthEast')
+'I_2 for V_2 = 4.5 V','Location','NorthEast');
 
-one = subplot(2,4,1);
+five = subplot(2,2,3);
 
-plot(Vdm1(1:interval:end),I1_1(1:interval:end),'*--'); hold on;
-plot(Vdm2(1:interval+1:end),I1_2(1:interval+1:end),'r*--'); 
-plot(Vdm3(1:interval-1:end),I1_3(1:interval-1:end),'g*--'); 
-
-xlim([-0.3 0.3]);
-ylim([0 2e-7]);
-grid on;
-
-four = subplot(2,4,4);
-
-plot(Vdm1(1:interval:end),I2_1(1:interval:end),'s--'); hold on;
-plot(Vdm3(1:interval-1:end),I2_3(1:interval-1:end),'gs--');
-plot(Vdm2(1:interval+1:end),I2_2(1:interval+1:end),'rs--');
-
-xlim([-0.3 0.3]);
-ylim([0 2e-7]);
-grid on;
-
-five = subplot(2,4,5);
-
-plot(Vdm1(1:interval:end),Idm1(1:interval:end),'^--'); hold on;
-plot(Vdm2(1:interval+1:end),Idm2(1:interval+1:end),'r^--');
-plot(Vdm3(1:interval-1:end),Idm3(1:interval-1:end),'g^--');
+plot(Vdm1(1:interval:end),Idm1(1:interval:end),'^--','LineWidth',2,'MarkerSize',10); hold on;
+plot(Vdm2(1:interval+1:end),Idm2(1:interval+1:end),'r^--','LineWidth',2,'MarkerSize',10);
+plot(Vdm3(1:interval-1:end),Idm3(1:interval-1:end),'g^--','LineWidth',2,'MarkerSize',10);
 
 xlim([-0.3 0.3]);
 ylim([-2e-7 2e-7]); 
 grid on;
 
-eight = subplot(2,4,8);
+legend('I_1 - I_2 for V_2 = 1 V',...
+'I_1 - I_2 for V_2 = 2.5 V',...
+'I_1 - I_2 for V_2 = 4.5 V','Location','NorthWest');
 
-plot(Vdm1(1:interval:end),Icm1(1:interval:end),'o--'); hold on;
-plot(Vdm2(1:interval+1:end),Icm2(1:interval+1:end),'ro--');
-plot(Vdm3(1:interval-1:end),Icm3(1:interval-1:end),'go--');
+eight = subplot(2,2,4);
+
+plot(Vdm1(1:interval:end),Icm1(1:interval:end),'o--','LineWidth',2,'MarkerSize',10); hold on;
+plot(Vdm2(1:interval+1:end),Icm2(1:interval+1:end),'ro--','LineWidth',2,'MarkerSize',10);
+plot(Vdm3(1:interval-1:end),Icm3(1:interval-1:end),'go--','LineWidth',2,'MarkerSize',10);
 
 xlim([-0.3 0.3]);
 ylim([0 2e-7]);
 grid on;
-set(get(big,'Title'),'String','Different Currents as a Function of V_{dm} for a Differential Pair');
+
+legend('I_1 + I_2 for V_2 = 1 V',...
+'I_1 + I_2 for V_2 = 2.5 V',...
+'I_1 + I_2 for V_2 = 4.5 V','Location','Best');
+
+% set(get(big,'Title'),'String','Different Currents as a Function of V_{dm} for a Differential Pair');
 set(get(one,'Title'),'String','I_1 as a Function of V_{dm}');
 set(get(four,'Title'),'String','I_2 as a Function of V_{dm}');
 set(get(five,'Title'),'String','I_1 - I_2 as a Function of V_{dm}');
@@ -120,6 +106,42 @@ for i=1:length(all_ax) %in order to support subplots
     
 end
 
+% legend(
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% ,'Location','SouthEast')
+% 
+% 
+% 
+% big = subplot(2,4,[2,3,6,7]);
+% 
+% plot(Vdm1(1:interval:end),I1_1(1:interval:end),'*--'); hold on;
+% plot(Vdm1(1:interval:end),I2_1(1:interval:end),'s--');
+% plot(Vdm1(1:interval:end),Idm1(1:interval:end),'^--');
+% plot(Vdm1(1:interval:end),Icm1(1:interval:end),'o--');
+% 
+% plot(Vdm2(1:interval+1:end),I1_2(1:interval+1:end),'r*--'); 
+% plot(Vdm2(1:interval+1:end),I2_2(1:interval+1:end),'rs--');
+% plot(Vdm2(1:interval+1:end),Idm2(1:interval+1:end),'r^--');
+% plot(Vdm2(1:interval+1:end),Icm2(1:interval+1:end),'ro--');
+% 
+% plot(Vdm3(1:interval-1:end),I1_3(1:interval-1:end),'g*--'); 
+% plot(Vdm3(1:interval-1:end),I2_3(1:interval-1:end),'gs--');
+% plot(Vdm3(1:interval-1:end),Idm3(1:interval-1:end),'g^--');
+% plot(Vdm3(1:interval-1:end),Icm3(1:interval-1:end),'go--');
+% 
+% xlim([-0.3 0.3]);
+% ylim([-2e-7 2e-7]);
+% grid on;
+% 
 % legend('I_1 for V_2 = 1 V',...
 % 'I_2 for V_2 = 1 V',...
 % 'I_1 - I_2 for V_2 = 1 V',...
