@@ -1,2 +1,2 @@
 %main.m
-doplot('./practiceplotter.m','./Figures/','practiceplotter');
+doplot('./Vdm_vs_I_subplot.m','./Figures/','Vdm_vs_I');
