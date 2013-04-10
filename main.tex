@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color} 
+\usepackage{fancyvrb} 
+\title{Circuits Lab 6}
+\author{Cory Dolphin and Noam Rubin}
+\date{April 3, 2013}
+
+
+
+\begin{document}
+
+\maketitle
+
+In your report, include a single plot showing I1, I2, I1−I2, and I1+I2, as a function of V1−V2 for all three values of V2 that you used. Do these current–voltage characteristics change signiﬁcantly asV2 changes? 
+
+Also include a plot showing the common-source node voltage, V , as a functionof V1−V2 for all three values of V2. How does the value of V change as V1 goes from below V2 to above it?
+
+For each of the three values of V2 that you used, ﬁt a straight line to the plot of I1−I2 asa function of V1− V2 around the region where V1≈ V2 (i.e., where V1−V2≈ 0). The slope of this line is approximately equal to the (incremental) differential-mode transconductancegain of the differential pair, which is formally given by ... Does the value of the diﬀerential-mode transconductance gain change signiﬁcantly as V2 changes?
+
+
+Now, set the bias voltage, Vb, so that the bias current is above threshold. For a singlevalue of V2 that is far enough away from the power supply rail to keep the bias transistorsaturated, perform these same measurements. You might want to increase slightly the rangeover which you sweep V1− V2 for these measurements. Make plot similar to the ones thatyou made for the lower bias current. How does the behavior of the circuit change as the biascurrent changes from weak or moderate inversion to strong inversion?
+
+\input{exp1.tex}
+
+\end{document}
