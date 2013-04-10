@@ -8,7 +8,33 @@
 \usepackage{amssymb}
 \usepackage{color} 
 \usepackage{fancyvrb} 
-\title{Circuits Lab 6}
+\newcommand{\Vg}{{$V_{G}$}}
+\newcommand{\Vsb}{{$V_{SB}$}}
+\newcommand{\Vgb}{{$V_{GB}$}}
+\newcommand{\Vds}{{$V_{DS}$}}
+\newcommand{\Vs}{{$V_{S}$}}
+\newcommand{\Vbs}{{$V_{BS}$}}
+\newcommand{\Vb}{{$V_{B}$}}
+\newcommand{\Va}{{$V_{A}$}}
+\newcommand{\Vd}{{$V_{D}$}}
+\newcommand{\Vdd}{{$V_{dd}$}}
+\newcommand{\If}{{$I_{F}$}}
+\newcommand{\Ir}{{$I_{R}$}}
+\newcommand{\Iin}{{$I_{in}$}}
+\newcommand{\Iout}{{$I_{out}$}}
+\newcommand{\Vt}{{$V_{T0}$}}
+\newcommand{\Ut}{{$U_T$}}
+\newcommand{\Is}{{$I_{s}$}}
+\newcommand{\Isat}{{$I_{sat}$}}
+\newcommand{\gm}{{$g_{m}$}}
+\newcommand{\gmro}{{$g_{m}r_{o}$}}
+\newcommand{\gs}{{$g_{s}c$}}
+\newcommand{\ro}{{$r_{o}$}}
+\newcommand{\Vdssat}{{$V_{DSSat}$}}
+\newcommand{\Vsdsat}{{$V_{SDSat}$}}
+\newcommand{\nMOS}{{\textit{n}MOS }}
+\newcommand{\pMOS}{{\textit{p}MOS }}
+\title{Circuits Lab 7}
 \author{Cory Dolphin and Noam Rubin}
 \date{April 3, 2013}
 
@@ -17,6 +43,18 @@
 \maketitle
 
 \section*{Current as a function of voltage}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\linewidth]{./Figures/Schematic.png}
+\caption{The differential pair circuit used in this experiment.}
+\label{fig:Schematic}
+\end{figure}
+
+In this experiment, we constructed an \nMOS differential pair, as shown in Figure \ref{fig:Schematic}. We set the bias voltage, \Vb, to $0.5V$, and set $V_2$
+
+% so that the bias current is just at or slightly
+% below threshold, and set V2 to a value suﬃciently far away from the appropriate power supply
+
 % In your report, include a single plot showing I1, I2, I1−I2, and I1+I2, as a function of V1−V2 for all three values of V2 that you used. Do these current–voltage characteristics change signiﬁcantly asV2 changes? 
 
 \begin{figure}[H]
