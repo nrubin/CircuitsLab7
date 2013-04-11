@@ -14,8 +14,11 @@
 \newcommand{\Vds}{{$V_{DS}$}}
 \newcommand{\Vs}{{$V_{S}$}}
 \newcommand{\Vbs}{{$V_{BS}$}}
-\newcommand{\Vb}{{$V_{B}$}}
+\newcommand{\Vb}{{$V_{b}$}}
 \newcommand{\Va}{{$V_{A}$}}
+\newcommand{\Vtwo}{{$V_{2}$}}
+\newcommand{\Vone}{{$V_{1}$}}
+\newcommand{\gdm}{{$G_{dm}$}}
 \newcommand{\Vd}{{$V_{D}$}}
 \newcommand{\Vdd}{{$V_{dd}$}}
 \newcommand{\If}{{$I_{F}$}}
@@ -30,6 +33,7 @@
 \newcommand{\gmro}{{$g_{m}r_{o}$}}
 \newcommand{\gs}{{$g_{s}c$}}
 \newcommand{\ro}{{$r_{o}$}}
+\newcommand{\Vdm}{{$V_{dm}$}}
 \newcommand{\Vdssat}{{$V_{DSSat}$}}
 \newcommand{\Vsdsat}{{$V_{SDSat}$}}
 \newcommand{\nMOS}{{\textit{n}MOS }}
@@ -75,14 +79,31 @@ In this experiment, we constructed an \nMOS differential pair, as shown in Figur
 \section*{Common-source Node voltage}
 % Also include a plot showing the common-source node voltage, V , as a functionof V1−V2 for all three values of V2. How does the value of V change as V1 goes from below V2 to above it?
 
-%NodeVoltageWeakInversion
+From the pre-lab, we expect the common-source node voltage $V$ to operate according to the following equation:
+
+\begin{equation}
+V = \kappa (\textrm{max}(V_1,V_2) - V_b)
+\label{eq:nodevoltageeq}
+\end{equation}
+
+In this first experiment, we set \Vtwo while adjusting \Vone, so we expect a graph of the $V$ as a function of \Vdm to be constant when $V_{dm} < 0$ and to follow \Vone when $V{dm} > 0$. We in fact see this in figure \ref{fig:nodevoltageWI}, where $V$ is plotted as a function of \Vdm for three values of \Vtwo.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{./Figures/NodeVoltageWeakInversion.eps}
-\caption{The node voltage follows the larger voltage!!}
+\caption{Node voltage as a function of the differential mode voltage. Governed by equation \ref{eq:nodevoltageeq}, we see $V$ follow \Vtwo (which was constant for each separate experiment) when $V_{dm} < 0$ and follow \Vone when $V_{dm} > 0$.}
 \label{fig:nodevoltageWI}
 \end{figure}
+
+In figure \ref{fig:nodevoltageWI}, when $V_{dm} < 0$, we see that $V$ is set to a constant value, and when $V_{dm} > 0$, we see it rise almost linearly. The behavior when $V_{dm} < 0$ is explained by $V$ following a function of \Vtwo, specifically:
+
+\begin{equation*}
+V = \kappa V_2 - V_b.
+\end{equation*}
+
+As \Vtwo is constant in these experiments, the value of $V$ remains constant. When $V_{dm} > 0$, we see $V$ increase linearly, which is explain by the fact that we were adjusting \Vone linearly, and $V$ follows \Vone.
+
+To double check that equation \ref{eq:nodevoltageeq} well-described the behavior of $V$ as a function of \Vdm, we plugged in values of \Vone, \Vtwo and \Vb into equation \ref{eq:nodevoltageeq} and compares the values of \kappa. 
 
 % For each of the three values of V2 that you used, ﬁt a straight line to the plot of I1−I2 asa function of V1− V2 around the region where V1~ V2 (i.e., where V1−V2~ 0). The slope of this line is approximately equal to the (incremental) differential-mode transconductancegain of the differential pair, which is formally given by ... Does the value of the differential-mode transconductance gain change signiﬁcantly as V2 changes?
 
