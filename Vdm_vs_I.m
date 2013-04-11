@@ -1,5 +1,5 @@
 %Experiment 1 plotter for Vb = 0.5, V2 = 1V
-interval = 5;
+interval = 10;
 
 load('Exp1_Vb0.5_V21_Data.mat');
 
