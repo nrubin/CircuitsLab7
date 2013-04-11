@@ -150,12 +150,14 @@ In the below experiments, we set \Vb to 1 Volt, which put the bias resistor into
 
 In figure \ref{fig:AllCurrentsStrongInversion}, we plotted \Ione, \Itwo, \Idm, and \Icm as a function of \Vdm, as well as an extracted value for \gdm ($2.3458 \times 10^{-4} \Omega^{-1}$). Most obviously, we see the currents in this plot reach a higher and lower limit, due to \Ib being higher (as the bias transistor is in strong inversion.)
 
-One important note is how much wider the linear region of the \Idm vs. \Vdm plot is in strong inversion than in weak inversion (0.2 Volts in weak inversion to 0.4 volts in strong inversion). 
+One important note is how much wider the linear region of the \Idm vs. \Vdm plot is in strong inversion than in weak inversion (0.2 Volts in weak inversion to 0.4 volts in strong inversion). This is likely due to the greater values of \Idm that appear in strong inversion, as \Ib is larger.
+
+We expect \gdm is larger for the same reason. Since \Ib is larger, the extremities of \Idm are greater, so the slope of the linear region of \Idm will be steeper in order to reach those larger currents.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{./Figures/AllCurrentsStrongInversion.eps}
-\caption{Something descriptive. }
+\caption{Various currents and \gdm as a function of \Vdm for a differential pair with strong inversion current. Of note is the wider linear region for \Idm as a function of \Vdm, which is due to \Ib being greater (so \Idm is higher at its extrememties).}
 \label{fig:AllCurrentsStrongInversion}
 \end{figure}
 
