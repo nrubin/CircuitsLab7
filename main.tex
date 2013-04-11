@@ -18,6 +18,8 @@
 \newcommand{\Va}{{$V_{A}$}}
 \newcommand{\Vtwo}{{$V_{2}$}}
 \newcommand{\Vone}{{$V_{1}$}}
+\newcommand{\Itwo}{{$I_{2}$}}
+\newcommand{\Ione}{{$I_{1}$}}
 \newcommand{\gdm}{{$G_{dm}$}}
 \newcommand{\Vd}{{$V_{D}$}}
 \newcommand{\Vdd}{{$V_{dd}$}}
@@ -35,6 +37,8 @@
 \newcommand{\ro}{{$r_{o}$}}
 \newcommand{\Vdm}{{$V_{dm}$}}
 \newcommand{\Idm}{{$I_{dm}$}}
+\newcommand{\Icm}{{$I_{cm}$}}
+\newcommand{\Ib}{{$I_{b}$}}
 \newcommand{\Vdssat}{{$V_{DSSat}$}}
 \newcommand{\Vsdsat}{{$V_{SDSat}$}}
 \newcommand{\nMOS}{{\textit{n}MOS }}
@@ -96,9 +100,7 @@ In this first experiment, we set \Vtwo while adjusting \Vone, so we expect a gra
 \label{fig:nodevoltageWI}
 \end{figure}
 
-In figure \ref{fig:nodevoltageWI}, when $V_{dm} < 0$, we see that $V$ is set to a constant value, and when $V_{dm} > 0$, we see it rise almost linearly. The behavior when $V_{dm} < 0$ is explained by $V$ following a function of \Vtwo, and since \Vtwo is constant in these experiments, the value of $V$ remains constant. When $V_{dm} > 0$, we see $V$ increase linearly, which is explain by the fact that we were adjusting \Vone linearly, and $V$ follows \Vone. The relationship seems to interpolate smoothly between $V_{dm} < 0$ and $V_{dm} > 0$, if rather quickly.
-
-% For each of the three values of V2 that you used, ﬁt a straight line to the plot of I1−I2 asa function of V1− V2 around the region where V1~ V2 (i.e., where V1−V2~ 0). The slope of this line is approximately equal to the (incremental) differential-mode transconductancegain of the differential pair, which is formally given by ... Does the value of the differential-mode transconductance gain change signiﬁcantly as V2 changes?
+In figure \ref{fig:nodevoltageWI}, when $V_{dm} < 0$, we see that $V$ is set to a constant value, and when $V_{dm} > 0$, we see it rise almost linearly. The behavior when $V_{dm} < 0$ is explained by $V$ following a function of \Vtwo, and since \Vtwo is constant in these experiments, the value of $V$ remains constant. When $V_{dm} > 0$, we see $V$ increase linearly, which is explain by the fact that we were adjusting \Vone linearly, and $V$ follows \Vone. The relationship seems to interpolate smoothly between $V_{dm} < 0$ and $V_{dm} > 0$.
 
 
 \section*{Incremental Transconductance Gain}
@@ -109,15 +111,6 @@ The incremental transconductance gain of a differential pair, \gdm, is defined a
 G_{dm} = \frac{\partial I_{dm}}{\partial V_{dm}}\bigg|_{V_{dm} = 0}
 \label{eq:gdm}
 \end{equation}
-
-To solve for \gdm, we plotted \Idm and a function of \Vdm, and fit a straight line to the linear region of the graph, where $V_{dm} \approx I_{dm}$. The graph can be seen in figure \ref{fig:gdm}, while each value of \gdm compard to \Vtwo is in table \ref{tb:gdm}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{./Figures/Gdm.eps}
-\caption{Plot of \Idm as a function of \Vdm for three values of \Vtwo, as well as lines representing \gdm. The slopes in the linear regions change very little relative to \Vtwo, which is a result of the differential pair circuit revolving mostly on \Vdm, which doesn't change with \Vtwo.}
-\label{fig:gdm}
-\end{figure}
 
 \begin{table}[h]
 \begin{center}
@@ -130,20 +123,40 @@ To solve for \gdm, we plotted \Idm and a function of \Vdm, and fit a straight li
         \label{tb:gdm}
     \end{tabular}
 \end{center}
+\caption{Various Values of \gdm for a given \Vtwo}
 \end{table}
 
+To solve for \gdm, we plotted \Idm and a function of \Vdm, and fit a straight line to the linear region of the graph, where $V_{dm} \approx I_{dm}$. The graph can be seen in figure \ref{fig:gdm}, while each value of \gdm compard to \Vtwo is in table 1.
 
-As is visually obvious in figure \ref{fig:gdm}, the slopes of the linear regions of the \Idm vs. \Vdm plot change little with \Vtwo, which is a property of the differential pair circuit.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{./Figures/Gdm.eps}
+\caption{Plot of \Idm as a function of \Vdm for three values of \Vtwo, as well as lines representing \gdm. The slopes in the linear regions change very little relative to \Vtwo, which is a result of the differential pair circuit revolving mostly on \Vdm, which doesn't change with \Vtwo.}
+\label{fig:gdm}
+\end{figure}
+
+
+As is visually obvious in figure \ref{fig:gdm}, the slopes of the linear regions of the \Idm vs. \Vdm plot change little with \Vtwo, which is a property of the differential pair circuit. From table 1 we see that $G_{dm} \approx 4.8 \times 10^{-5}$, with the largest amount of error around $V_2 = 2 V$, but the magnitude is so small it could be attributed to experimental error.
 
 % Now, set the bias voltage, Vb, so that the bias current is above threshold. For a singlevalue of V2 that is far enough away from the power supply rail to keep the bias transistor saturated, perform these same measurements. You might want to increase slightly the rangeover which you sweep V1− V2 for these measurements. Make plot similar to the ones thatyou made for the lower bias current. How does the behavior of the circuit change as the biascurrent changes from weak or moderate inversion to strong inversion?
 
 %AllCurrentsStrongInversion
 
+\section*{Bias Transistor in Strong Inversion}
+
+In the below experiments, we set \Vb to 1 Volt, which put the bias resistor into strong inversion. We collected values for \Ione, \Itwo, and $V$ for only one value of \Vtwo, and explored the same currents and voltages as before.
+
+\subsection*{Various Currents and \gdm}
+
+In figure \ref{fig:AllCurrentsStrongInversion}, we plotted \Ione, \Itwo, \Idm, and \Icm as a function of \Vdm, as well as an extracted value for \gdm ($2.3458 \times 10^{-4} \Omega^{-1}$). Most obviously, we see the currents in this plot reach a higher and lower limit, due to \Ib being higher (as the bias transistor is in strong inversion.)
+
+One important note is how much wider the linear region of the \Idm vs. \Vdm plot is in strong inversion than in weak inversion (0.2 Volts in weak inversion to 0.4 volts in strong inversion). 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{./Figures/AllCurrentsStrongInversion.eps}
 \caption{Something descriptive. }
-\label{fig:AllCurrentsStrongInversion }
+\label{fig:AllCurrentsStrongInversion}
 \end{figure}
 
 %NoldeVoltageStrongInversion
