@@ -34,6 +34,7 @@
 \newcommand{\gs}{{$g_{s}c$}}
 \newcommand{\ro}{{$r_{o}$}}
 \newcommand{\Vdm}{{$V_{dm}$}}
+\newcommand{\Idm}{{$I_{dm}$}}
 \newcommand{\Vdssat}{{$V_{DSSat}$}}
 \newcommand{\Vsdsat}{{$V_{SDSat}$}}
 \newcommand{\nMOS}{{\textit{n}MOS }}
@@ -106,6 +107,18 @@ In figure \ref{fig:nodevoltageWI}, when $V_{dm} < 0$, we see that $V$ is set to 
 
 % For each of the three values of V2 that you used, ﬁt a straight line to the plot of I1−I2 asa function of V1− V2 around the region where V1~ V2 (i.e., where V1−V2~ 0). The slope of this line is approximately equal to the (incremental) differential-mode transconductancegain of the differential pair, which is formally given by ... Does the value of the differential-mode transconductance gain change signiﬁcantly as V2 changes?
 
+
+\section*{Incremental Transconductance Gain}
+
+The incremental transconductance gain of a differential pair, \gdm, is defined as:
+
+\begin{equation}
+G_{dm} = \frac{\partial I_{dm}}{\partial V_{dm}}\bigg|_{V_{dm} = 0}
+\label{eq:gdm}
+\end{equation}
+
+To solve for \gdm, we plotted \Idm and a function of \Vdm, and fit a straight line to the linear region of the graph, where $V_{dm} \approx I_{dm}$. The graph can be seen in figure \ref{fig:gdm}, while each value of \gdm compard to \Vtwo is in table \ref{tb:gdm}.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{./Figures/Gdm.eps}
@@ -125,6 +138,8 @@ In figure \ref{fig:nodevoltageWI}, when $V_{dm} < 0$, we see that $V$ is set to 
     \end{tabular}
 \end{center}
 \end{table}
+
+
 
 
 % Now, set the bias voltage, Vb, so that the bias current is above threshold. For a singlevalue of V2 that is far enough away from the power supply rail to keep the bias transistor saturated, perform these same measurements. You might want to increase slightly the rangeover which you sweep V1− V2 for these measurements. Make plot similar to the ones thatyou made for the lower bias current. How does the behavior of the circuit change as the biascurrent changes from weak or moderate inversion to strong inversion?

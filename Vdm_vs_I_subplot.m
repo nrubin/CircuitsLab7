@@ -4,34 +4,37 @@ interval = 5;
 load('Exp1_Vb0.5_V21_Data.mat');
 
 Vdm1 = linspace(-0.3,0.3,500);
-Idm1 = Exp1_Vb1_I1 - Exp1_Vb1_I2;
-Icm1 = Exp1_Vb1_I1 + Exp1_Vb1_I2;
 I1_1 = Exp1_Vb1_I1;
 I2_1 = Exp1_Vb1_I2;
+Idm1 = I1_1 - I2_1;
+Icm1 = I1_1 + I2_1;
+
 
 load('Exp1_Vb0.5_V22.5_Data.mat');
 
 Vdm2 = linspace(-0.3,0.3,500);
-Idm2 = Exp1_Vb25_I1 - Exp1_Vb25_I2;
-Icm2 = Exp1_Vb25_I1 + Exp1_Vb25_I2;
 I1_2 = Exp1_Vb25_I1;
 I2_2 = Exp1_Vb25_I2;
+Idm2 = I1_2 - I2_2;
+Icm2 = I1_2 + I2_2;
+
 
 load('Exp1_Vb0.5_ V24.5_Data.mat')
 
- Vdm3 = linspace(-0.3,0.3,500);
-Idm3 = Exp1_Vb45_I1 - Exp1_Vb45_I2;
-Icm3 = Exp1_Vb45_I1 + Exp1_Vb45_I2;
+Vdm3 = linspace(-0.3,0.3,500);
 I1_3 = Exp1_Vb45_I1;
 I2_3 = Exp1_Vb45_I2;
+Idm3 = I1_3 - I2_3;
+Icm3 = I1_3 + I2_3;
+
 
 
 
 one = subplot(2,2,1);
 
 plot(Vdm1(1:interval:end),I1_1(1:interval:end),'*--','LineWidth',2,'MarkerSize',10); hold on;
-plot(Vdm2(1:interval+1:end),I1_2(1:interval+1:end),'r*--','LineWidth',2,'MarkerSize',10); 
-plot(Vdm3(1:interval-1:end),I1_3(1:interval-1:end),'g*--','LineWidth',2,'MarkerSize',10); 
+plot(Vdm2(1:interval:end),I1_2(1:interval:end),'r*--','LineWidth',2,'MarkerSize',10); 
+plot(Vdm3(1:interval:end),I1_3(1:interval:end),'g*--','LineWidth',2,'MarkerSize',10); 
 
 xlim([-0.3 0.3]);
 ylim([0 2e-7]);
@@ -45,8 +48,8 @@ legend('I_1 for V_2 = 1 V',...
 four = subplot(2,2,2);
 
 plot(Vdm1(1:interval:end),I2_1(1:interval:end),'s--','LineWidth',2,'MarkerSize',10); hold on;
-plot(Vdm3(1:interval-1:end),I2_3(1:interval-1:end),'gs--','LineWidth',2,'MarkerSize',10);
-plot(Vdm2(1:interval+1:end),I2_2(1:interval+1:end),'rs--','LineWidth',2,'MarkerSize',10);
+plot(Vdm2(1:interval:end),I2_2(1:interval:end),'rs--','LineWidth',2,'MarkerSize',10);
+plot(Vdm3(1:interval:end),I2_3(1:interval:end),'gs--','LineWidth',2,'MarkerSize',10);
 
 xlim([-0.3 0.3]);
 ylim([0 2e-7]);
@@ -59,8 +62,8 @@ legend('I_2 for V_2 = 1 V',...
 five = subplot(2,2,3);
 
 plot(Vdm1(1:interval:end),Idm1(1:interval:end),'^--','LineWidth',2,'MarkerSize',10); hold on;
-plot(Vdm2(1:interval+1:end),Idm2(1:interval+1:end),'r^--','LineWidth',2,'MarkerSize',10);
-plot(Vdm3(1:interval-1:end),Idm3(1:interval-1:end),'g^--','LineWidth',2,'MarkerSize',10);
+plot(Vdm2(1:interval:end),Idm2(1:interval:end),'r^--','LineWidth',2,'MarkerSize',10);
+plot(Vdm3(1:interval:end),Idm3(1:interval:end),'g^--','LineWidth',2,'MarkerSize',10);
 
 xlim([-0.3 0.3]);
 ylim([-2e-7 2e-7]); 
@@ -73,8 +76,8 @@ legend('I_1 - I_2 for V_2 = 1 V',...
 eight = subplot(2,2,4);
 
 plot(Vdm1(1:interval:end),Icm1(1:interval:end),'o--','LineWidth',2,'MarkerSize',10); hold on;
-plot(Vdm2(1:interval+1:end),Icm2(1:interval+1:end),'ro--','LineWidth',2,'MarkerSize',10);
-plot(Vdm3(1:interval-1:end),Icm3(1:interval-1:end),'go--','LineWidth',2,'MarkerSize',10);
+plot(Vdm2(1:interval:end),Icm2(1:interval:end),'ro--','LineWidth',2,'MarkerSize',10);
+plot(Vdm3(1:interval:end),Icm3(1:interval:end),'go--','LineWidth',2,'MarkerSize',10);
 
 xlim([-0.3 0.3]);
 ylim([0 2e-7]);

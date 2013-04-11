@@ -1,28 +1,38 @@
 %I1 -I2 with theoretical fits
-interval = 5;
-load('Exp1_Vb0.5_V21_Data.mat');
-Vdm1 = linspace(-0.3,0.3,500);
-Idm1 = Exp1_Vb1_I1 - Exp1_Vb1_I2;
+interval = 2;
+load('newdata.mat')
 
-load('Exp1_Vb0.5_V22.5_Data.mat');
-Vdm2 = linspace(-0.3,0.3,500);
-Idm2 = Exp1_Vb25_I1 - Exp1_Vb25_I2;
+Vdm1 = linspace(-0.3,0.3,100);
+Idm1 = I1i - I2i;
+Icm1 = I1i + I2i;
+I1_1 = I1i;      
+I2_1 = I2i;      
 
-load('Exp1_Vb0.5_ V24.5_Data.mat')
-Vdm3 = linspace(-0.3,0.3,500);
-Idm3 = Exp1_Vb45_I1 - Exp1_Vb45_I2;
+Vdm2 = linspace(-0.3,0.3,100);
+Idm2 = I1iii - I2ii;
+Icm2 = I1iii + I2ii;
+I1_2 = I1iii;      
+I2_2 = I2iii;      
 
-coeffs1 = polyfit(Vdm1(214:286), Idm1(214:286),1);
+Vdm3 = linspace(-0.3,0.3,100);
+Idm3 = I1iii - I2iii;
+Icm3 = I1iii + I2iii;
+I1_3 = I1iii;      
+I2_3 = I2iii;
+
+%39 59
+
+coeffs1 = polyfit(Vdm1(39:59), Idm1(39:59),1);
 slope1 = coeffs1(1);
 intercept1 = coeffs1(2);
 Idm1Fit = slope1*Vdm1 + intercept1;
 
-coeffs2 = polyfit(Vdm2(214:286), Idm2(214:286),1);
+coeffs2 = polyfit(Vdm2(39:59), Idm2(39:59),1);
 slope2 = coeffs2(1);
 intercept2 = coeffs2(2);
 Idm2Fit = slope2*Vdm2 + intercept2;
 
-coeffs3 = polyfit(Vdm3(214:286), Idm3(214:286),1);
+coeffs3 = polyfit(Vdm3(39:59), Idm3(39:59),1);
 slope3 = coeffs3(1);
 intercept3 = coeffs3(2);
 Idm3Fit = slope3*Vdm3 + intercept3;
@@ -36,15 +46,15 @@ plot(Vdm3(1:interval:end),Idm3(1:interval:end),'g.','MarkerSize',20);
 plot(Vdm3,Idm3Fit,'g-','LineWidth',2);
 
 xlim([-0.3 0.3]);
-ylim([-2e-7 2e-7]); 
+ylim([-0.8e-5 0.8e-5]); 
 grid on;
 set(get(gca,'Title'),'String','I_{dm} and G_{dm} for a Differential Pair');
-legend('I_1 - I_2 for V_2 = 1 V',...
-    'G_{dm} for V_2 = 1V',...
-'I_1 - I_2 for V_2 = 2.5 V',...
-'G_{dm} for V_2 = 2.5V',...
-'I_1 - I_2 for V_2 = 4.5 V',...
-'G_{dm} for V_2 = 4.5V','Location','NorthWest');
+legend('I_1 - I_2 for V_2 = 2 V',...
+    'G_{dm} for V_2 = 2 V',...
+'I_1 - I_2 for V_2 = 3 V',...
+'G_{dm} for V_2 = 3 V',...
+'I_1 - I_2 for V_2 = 4 V',...
+'G_{dm} for V_2 = 4 V','Location','NorthWest');
 
 all_ax = findobj(gcf,'Type','axes');
     
