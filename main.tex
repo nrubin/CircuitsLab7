@@ -54,25 +54,32 @@
 \label{fig:Schematic}
 \end{figure}
 
-In this experiment, we constructed an \nMOS differential pair, as shown in Figure \ref{fig:Schematic}. We set the bias voltage, \Vb, to $0.5V$, and set $V_2$
-
-% so that the bias current is just at or slightly
-% below threshold, and set V2 to a value suﬃciently far away from the appropriate power supply
-
-% In your report, include a single plot showing I1, I2, I1−I2, and I1+I2, as a function of V1−V2 for all three values of V2 that you used. Do these current–voltage characteristics change signiﬁcantly asV2 changes? 
-
+In this experiment, we constructed an \nMOS differential pair, as shown in Figure \ref{fig:Schematic}. We set the bias voltage, \Vb, to $0.5V$, and set $V_2$ to a range of voltages, from $1V$ to $4.5V$, sweeping $V_{DM}$ from $-30mV$ to $+30mV$. Each of these three data series, with $I_1$, $I_2$, $I_1 - I_2$ and $I_1 + I_2$ can be seen plotted on one figure, in Figure \ref{fig:AllCurrentsOneFigure}. Meanwhile, because of the large number of data series requested, we created four subplots containing the same information, which we will use for the purpose of analysis.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{./Figures/AllCurrentsOneFigure}
-\caption{Something descriptive. }
+\caption{The relationship between $I_1$ and $I_2$, shown through a range of different vales of $V_{DM}$ and \Vgb. The same information can is represented in Figure \ref{fig:AllCurrentsSubplot}, where it is more easily analyzed. }
 \label{fig:AllCurrentsOneFigure }
 \end{figure}
+
+As seen below in Figure \ref{fig:AllCurrentsSubplot}, the current through $M_1$ and $M_2$ change significantly as $V_{DM}$ moves away from $0V$. As $V_{DM}$ increases, $I_1$ increases and $I_2$ decrease. For a decrease in $V_{DM}$, the opposite is true. 
+As $V_2$ increases, the slope of the $I$, $V_{DM}$ relationship close to $0V$ increases in slope, further, the maximum current increases in magnitude with increased $V_2$. This difference can be seen most visibly in the plot of $I_1 -I_2$ as a function of $V_{DM}$, as $V_2$ increases, the slope close to the origin increases, and the maximum differential in current achieved is significantly larger, appearing to change linearly with increased $V_2$.
+
+% Do these current–voltage characteristics change signiﬁcantly as
+% V2 changes? Also include a plot showing the common-source node voltage, V , as a function
+% of V1
+% −V2 for all three values of V2. How does the value of V change as V1 goes from below
+% V2 to above it?
+
+% In your report, include a single plot showing I1, I2, I1−I2, and I1+I2, as a function of V1−V2 for all three values of V2 that you used. Do these current–voltage characteristics change signiﬁcantly asV2 changes? 
+
+
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{./Figures/AllCurrentsSubplot}
-\caption{Something descriptive.}
+\caption{A more readable representation Figure \ref{fig:AllCurrentsOneFigure}}
 \label{fig:AllCurrentsSubplot}
 \end{figure}
 
